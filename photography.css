@@ -1,0 +1,243 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+}
+ul{
+    list-style: none;
+}
+li{
+    padding: 0 12px;
+}
+a{
+    color: #000;
+    text-decoration: none;
+}
+#btn{
+    border: 0;
+    position: fixed;
+    z-index: 3;
+    top: 25px;
+    background: transparent;
+    display: none;
+}
+#btn:focus{
+    outline: none;
+  }
+.hamburger{
+    display: block;
+    width: 25px;
+    border: 1px solid #000;
+    margin: 8px;
+}
+button.open .first{
+    position: absolute;
+    top: 0;
+    transform: rotate(45deg);
+}
+button.open .second{
+    position: absolute;
+    top: 0;
+    transform: rotate(-45deg);
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    width: 350px;
+    height: 100%;
+    display: none;
+    background-color: #ffa11fd9;
+    z-index: 2;
+    text-align: center;
+    padding-top: 120px;
+}
+.sidebar li a{
+    font-size: 26px;
+    color: white;
+    line-height: 2.5;
+}
+.nav-main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    background: #ffffffb8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.nav-bar{
+    display: flex;
+}
+.nav-bar-2{
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+.title{
+    font-size: 40px;
+    letter-spacing: 8px;    
+}
+.contact a{
+    background: crimson;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+.main-cols{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 114px;
+}
+.cols{
+    width: 32%;
+}
+.cols img{
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 40px;
+}
+.about{
+    margin-top: 120px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+img {
+    position: relative;
+}
+.about-img:before {
+    content: '';
+    background-color: #e49b2e;
+    width: 332px;
+    position: absolute;
+    height: 445px;
+    right: -18%;
+    top: -10%;
+    animation-name: move;
+    animation-duration: 6s;
+}
+.about-img{
+    position: relative;
+    width: 480px;
+}
+.sub-image{
+    overflow: hidden;
+    height: 602px;
+}
+.sub-image img{
+    animation-name: imagezoom;
+    animation-duration: 6s;
+}
+.about-intro{
+    width: 25%;
+    font-size: 18px;
+}
+.about-intro h1{
+    font-family: auto;
+    font-size: 50px;
+}
+.profile-img{
+    position:relative;
+}
+.profile-img img{
+    width: 300px;
+    object-fit: cover;
+    height: 300px;
+    border-radius: 50%;
+    border: 14px solid #d4c8c8f5;
+    object-position: top;
+}
+.profile-img:before{
+    content: '';
+    width: 325px;
+    height: 325px;
+    position: absolute;
+    border: 20px solid #f3f3f3;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+}
+.artis-sign{
+    animation-name: rotate;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+}
+.artis-sign img{
+    background: #b37d2e;
+    border-radius: 50%;
+    padding: 5px;
+}
+.open{
+    display: block;
+}
+@keyframes rotate{
+    0%{ transform: rotate(0);}
+    25%{ transform: rotate(45deg);}
+    50%{ transform: rotate(0);}
+    75%{ transform: rotate(-45deg);}
+    100%{ transform: rotate(0);}
+}
+@keyframes move{
+    0%{ width: 332px;}
+    100%{ width: 532px;}
+}
+@keyframes imagezoom{
+    0%{ width: 480px; }
+    100%{ width: 550px;}
+}
+@media (max-width: 1023px){
+    .about-img:before {
+        right: -6%;
+    }
+}
+@media (max-width: 767px){
+    .About{
+        display: none;
+    }
+    .contact-page{
+        display: none;
+    }
+    .nav-main{
+        justify-content: center;
+    }
+    .about{
+        flex-wrap: wrap;
+        margin-top: 0;
+    }
+    .about-intro{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .about-img{       
+        margin-bottom: 90px;
+    }
+    .sub-image{
+        width: 320px;
+        height: 290px;
+    }
+    .sub-image img{
+        width: 100%;
+        height: 100%;
+    }
+    .about-img:before {
+        width: 135px;
+        height: 338px;
+        top: -8%;
+    }
+    .footer-about{
+        text-align: center;
+    }
+    #btn{
+        display: block;
+    }
+    @keyframes imagezoom{
+        0%{ width: 320px; }
+        100%{ width: 350px;}
+    }
+    @keyframes move{
+        0%{ width: 135px;}
+        100%{ width: 300px;}
+    }
+}
